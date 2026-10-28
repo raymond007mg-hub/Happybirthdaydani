@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Dani ♡</title>
+
+        <!-- TIPOGRAFÍAS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        >
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/animations.css">
+
+    </head>
+
+    <body>
+
+        <!-- LUCES AMBIENTALES -->
+        <div class="ambient-lights" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+            <audio id="backgroundMusic" loop>
+                <source src="assets/images/music/cancion.mp3" type="audio/mpeg">
+            </audio>
+
+            <!-- BARRA DE PROGRESO -->
+            <div class="progress-bar">
+            <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+
+        <main>
+
+            <!-- PANTALLA DE INICIO -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-number">01</span>
+
+                    <h1>Dani <span>♡</span></h1>
+
+                    <p class="hero-subtitle">
+                        Hay una historia que quiero contarte...
+                    </p>
+
+                    <button class="start-button" id="startButton">
+                        Comenzar
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- PRIMER RECUERDO -->
+            <section class="memory" id="firstMemory">
+
+                <div class="memory-content">
+
+                    <span class="memory-number">02</span>
+
+                    <div class="memory-image">
+                        <img 
+                        src="assets/images/memory-01.jpeg" 
+                        alt="Primera foto juntos"
+                        >
+                    </div>
+
+                    <div class="memory-text">
+
+                        <h2>Toda gran historia tiene un comienzo</h2>
+
+                        <span class="memory-line"></span>
+
+                        <p>
+                        
+                        Y la nuestra, comenzó un 06 de diciembre del 2025, cuando nuetras miradas se cruzaron por primera vez,
+                        </p>
+
+                        <p>
+
+                        y como cosa del destino terminamos compartiendo juntos más de lo esperado
+
+                        </p>
+
+                    
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SEGUNDO RECUERDO -->
+            <section class="memory memory-reverse">
+
+                <div class="memory-content memory-layout">
+
+                    <div class="memory-text">
+
+                        <span class="memory-number">03</span>
+
+                            <h2>Fue tiempo después...</h2>
+
+                        <span class="memory-line"></span>
+
+                        <p>
+                        cuando empezamos a hablar; aparentemente aún no era el momento en el 2025, así que Dios unió nuestros caminos hasta Junio de 2026
+                        </p>
+
+                    </div>
+
+                    <div class="memory-image">
+
+                        <img
+                            src="assets/images/memory-02.jpeg"
+                            alt="Segundo recuerdo"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- TERCER RECUERDO -->
+            <section class="memory">
+
+                <div class="memory-content memory-layout">
+
+                    <div class="memory-image">
+                        <img
+                            src="assets/images/final-photo.jpeg"
+                            alt="Un momento especial juntos"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+
+                    <div class="memory-text">
+
+                        <span class="memory-number">04</span>
+
+                        <h2>Muy poco tiempo después...</h2>
+
+                        <span class="memory-line"></span>
+
+                        <p>
+
+                            decidí invitarte a salir, y luego otra vez, y otra vez y otra vez, hasta hoy.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- GALERÍA DE RECUERDOS -->
+            <section class="gallery-section">
+
+                <div class="gallery-container">
+
+                    <span class="gallery-number">05</span>
+
+                    <h2>Y desde entonces...</h2>
+
+                    <p class="gallery-intro">
+                        cada pequeño momento a tu lado ha sido un recuerdo inolvidable para mi, y aún nos faltan millones de recuerdos por construir
+                    </p>
+
+                    <div class="gallery-grid">
+
+                        <div class="gallery-item gallery-item-small">
+                            <img
+                            src="assets/images/memory-03.jpeg"
+                            alt="Recuerdo 1"
+                            loading="lazy"
+                            decoding="async"
+                            >
+                        </div>
+
+                        <div class="gallery-item gallery-item-wide">
+
+                            <video
+                                src="assets/images/memory-05.mp4"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                                preload="metadata"
+                            ></video>
+
+                        </div>
+
+                        <div class="gallery-item gallery-item-large">
+                            <img
+                                src="assets/images/memory-04.jpeg"
+                                alt="Recuerdo 2"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                        </div>
+
+                        
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- DATO CURIOSO -->
+            <section class="counter-section">
+
+                <div class="counter-content">
+
+                    <span class="counter-number">06</span>
+
+                    <p class="counter-label">
+                        Desde aquel 10 de Junio han pasado exactamente
+                    </p>
+
+                    <div class="counter-value" id="daysCounter">
+                    0
+                    </div>
+
+                    <p class="counter-unit">
+                    días
+                    </p>
+
+                    <p class="counter-text">
+                    Y todavía seguimos escribiendo nuestra historia, la cual te prometo que aún tiene muchos capítulos por escribir.
+                    </p>
+
+                  
+                </div>
+
+            </section>
+
+            <!-- MENSAJE FINAL -->
+            <section class="final-message">
+
+                <div class="final-content">
+
+                    <span class="final-number">07</span>
+
+                    <h2>Hoy</h2>
+
+                    <p>
+                    Quiero tener un pequeño detalle contigo, aparte de recordarte que eres el amor de mi vida, y un regalo inmerecido que Dios me dió.
+                    Desde que te abrí mi corazón no he podido dejar de pensar en tí, y la música ha sido otro regalo que tengo para recordarte y llevarte conmigo siempre, hoy quiro compartir esto contigo.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- FOTO FINAL -->
+            <section class="photo-final-section">
+                <div class="photo-final-content">
+
+                    <span class="photo-final-number"></span>
+
+                    <div class="photo-final-image">
+                        <img
+                            src="assets/images/memory-06.jpeg"
+                            alt="Un recuerdo especial"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- PLAYLIST -->
+            <section class="playlist-section">
+
+                <div class="playlist-content">
+
+                    <span class="playlist-number">08</span>
+
+                    <h2>Te amo tres millones</h2>
+
+                    <p>
+                    Feliz cumpleaños amor...
+                    </p>
+
+                    <button
+                    class="spotify-button"
+                    id="spotifyButton"
+                    >
+                    pulsa aquí
+                    </button>
+
+                </div>
+
+            </section>
+        </main>
+
+        <script src="js/script.js"></script>
+
+    </body>
+
+</html>
+

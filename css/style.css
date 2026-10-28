@@ -1,0 +1,1608 @@
+/* ==================================================
+   DANI PLAYLIST
+   STYLE.CSS
+   Diseño principal
+================================================== */
+
+
+/* ==================================================
+   01. VARIABLES
+================================================== */
+
+:root {
+
+    --color-background: #f8f5f2;
+
+    --color-text: #292525;
+
+    --color-muted: #756b68;
+
+    --color-accent: #a86f73;
+
+    --color-border: #e5ddd8;
+
+    --color-white: #ffffff;
+
+    --color-spotify: #1db954;
+
+    --font-serif:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+    --font-sans:
+    "Montserrat",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+}
+
+/* ==================================================
+   TIPOGRAFÍA
+================================================== */
+
+h1,
+h2 {
+
+    font-family:
+        var(--font-serif);
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        -0.02em;
+
+}
+
+
+p,
+button,
+span {
+
+    font-family:
+        var(--font-sans);
+
+}
+
+
+/* ==================================================
+   02. RESET
+================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+/* ==================================================
+   FONDO EDITORIAL
+================================================== */
+
+body {
+
+   .ambient-lights {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+    }
+
+    background:
+        /* Luz cálida superior izquierda */
+        radial-gradient(
+            ellipse 70% 55% at 5% 0%,
+            rgba(194, 139, 130, 0.18),
+            transparent 65%
+        ),
+
+        /* Luz cálida superior derecha */
+        radial-gradient(
+            ellipse 60% 50% at 100% 15%,
+            rgba(221, 181, 158, 0.16),
+            transparent 65%
+        ),
+
+        /* Luz central */
+        radial-gradient(
+            ellipse 80% 60% at 50% 45%,
+            rgba(255, 252, 247, 0.9),
+            transparent 75%
+        ),
+
+        /* Zona inferior */
+        radial-gradient(
+            ellipse 70% 60% at 20% 100%,
+            rgba(183, 137, 126, 0.10),
+            transparent 70%
+        ),
+
+        /* Última luz */
+        radial-gradient(
+            ellipse 60% 50% at 100% 90%,
+            rgba(210, 166, 148, 0.12),
+            transparent 70%
+        ),
+
+        var(--color-background);
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-serif);
+
+}
+
+
+/* ==================================================
+   TEXTURA
+================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    opacity: 0.045;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.35'/%3E%3C/svg%3E");
+
+}
+
+
+/* ==================================================
+   ELEMENTOS DECORATIVOS
+================================================== */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    top: 15%;
+
+    right: -250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168, 111, 115, 0.055),
+            transparent 70%
+        );
+
+    filter:
+        blur(20px);
+
+}
+
+/* ==================================================
+   03. ELEMENTOS GENERALES
+================================================== */
+
+img,
+video {
+
+    max-width: 100%;
+
+}
+
+
+button {
+
+    font-family:
+        var(--font-sans);
+
+}
+
+
+::selection {
+
+    background-color:
+        var(--color-accent);
+
+    color:
+        var(--color-white);
+
+}
+
+
+/* ==================================================
+   04. BARRA DE PROGRESO
+================================================== */
+
+.progress-bar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    background-color:
+        rgba(168, 111, 115, 0.12);
+
+    z-index: 9999;
+
+}
+
+
+.progress-bar-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background-color:
+        var(--color-accent);
+
+    transition:
+        width 0.1s linear;
+
+}
+
+
+/* ==================================================
+   05. HERO / PORTADA
+================================================== */
+
+.hero {
+
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.hero-content {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.hero-number {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color:
+        var(--color-accent);
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(70px, 16vw, 130px);
+
+    font-weight:
+        400;
+
+    line-height:
+        0.85;
+
+    letter-spacing:
+        -0.04em;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero h1 span {
+
+    color:
+        var(--color-accent);
+
+}
+
+
+.hero-subtitle {
+
+    font-family:
+        var(--font-sans);
+
+    font-size:
+        13px;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+
+    color:
+        var(--color-muted);
+
+    margin-bottom:
+        45px;
+
+}
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(168, 111, 115, 0.05);
+
+    filter:
+        blur(2px);
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+/* ==================================================
+   06. BOTÓN GENERAL DE INICIO
+================================================== */
+
+.start-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        150px;
+
+    padding:
+        15px 28px;
+
+    border:
+        1px solid
+        var(--color-text);
+
+    border-radius:
+        100px;
+
+    background:
+        transparent;
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-sans);
+
+    font-size:
+        11px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.35s ease;
+
+}
+
+
+.start-button:hover {
+
+    background:
+        var(--color-text);
+
+    color:
+        var(--color-white);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(41, 37, 37, 0.12);
+
+}
+
+.start-button::after {
+
+    content: " ↓";
+
+    margin-left: 8px;
+
+    font-size: 15px;
+
+    transition: transform 0.3s ease;
+
+}
+
+.start-button:hover::after {
+
+    transform: translateY(3px);
+
+}
+
+
+/* ==================================================
+   07. RECUERDOS
+================================================== */
+
+.memory {
+
+    min-height: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 64px 20px;
+
+}
+
+
+.memory-content {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    text-align: center;
+
+}
+
+
+.memory-number {
+
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--color-accent);
+
+}
+
+
+/* ---------- Imagen ---------- */
+
+.memory-image {
+
+    width: min(100%, 600px);
+
+    margin: 0 auto 50px;
+
+    overflow: hidden;
+
+    border: 6px solid rgba(255, 255, 255, 0.72);
+
+    border-radius: 8px;
+
+    box-shadow: 0 18px 45px rgba(50, 35, 30, 0.12);
+
+}
+
+
+.memory-image,
+.gallery-item {
+
+    border-radius:
+        8px;
+
+    background:
+        #e9e1dc;
+
+    .memory-image img,
+    .memory-image video,
+    .gallery-item img,
+    .gallery-item video {
+
+    transition:
+        transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+}
+
+}
+
+
+/* ---------- Texto ---------- */
+
+.memory-text {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+}
+
+
+.memory h2 {
+
+    font-size:
+        clamp(40px, 8vw, 70px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+}
+
+
+.memory-line {
+
+    display: block;
+
+    width: 52px;
+
+    height: 1px;
+
+    background-color:
+        var(--color-accent);
+
+    margin: 0 auto 25px;
+
+}
+
+
+.memory p {
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color:
+        var(--color-muted);
+
+}
+
+
+/* ==================================================
+   08. RECUERDO LATERAL
+================================================== */
+
+.memory-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    max-width: 1000px;
+
+    text-align: left;
+
+}
+
+
+.memory-layout .memory-text {
+
+    margin: 0;
+
+    max-width: 450px;
+
+}
+
+
+.memory-layout .memory-number {
+
+    margin-bottom: 20px;
+
+}
+
+
+.memory-layout .memory-line {
+
+    margin-left: 0;
+
+}
+
+
+.memory-layout .memory-image {
+
+    width: 100%;
+
+    margin: 0;
+
+}
+
+
+.memory-layout .memory-image img,
+.memory-layout .memory-image video {
+
+    height: 550px;
+
+}
+
+
+/* ==================================================
+   09. GALERÍA
+================================================== */
+
+.gallery-section {
+
+    padding: 88px 20px;
+
+}
+
+
+.gallery-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+.gallery-number {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--color-accent);
+
+}
+
+
+.gallery-container h2 {
+
+    font-size:
+        clamp(40px, 8vw, 70px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+
+}
+
+
+.gallery-intro {
+
+    font-size: 17px;
+
+    color:
+        var(--color-muted);
+
+    margin-bottom: 60px;
+
+}
+
+
+/* ---------- Grid ---------- */
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    grid-template-rows:
+        300px 300px;
+
+    gap: 20px;
+
+}
+
+
+.gallery-item {
+
+    overflow: hidden;
+
+    border: 5px solid rgba(255, 255, 255, 0.72);
+
+    border-radius: 8px;
+
+    box-shadow: 0 14px 35px rgba(50, 35, 30, 0.10);
+
+}
+
+
+.gallery-item img,
+.gallery-item video {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+
+}
+
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+/* ---------- Posiciones ---------- */
+
+.gallery-item-small {
+
+    grid-column: 1;
+
+    grid-row: 1;
+
+}
+
+
+.gallery-item-large {
+
+    grid-column: 2;
+
+    grid-row: 1 / 3;
+
+}
+
+
+.gallery-item-wide {
+
+    grid-column: 1;
+
+    grid-row: 2;
+
+}
+
+
+/* ==================================================
+   10. CONTADOR
+================================================== */
+
+.counter-section {
+
+    min-height: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 76px 20px;
+
+    text-align: center;
+
+}
+
+
+.counter-content {
+
+    max-width: 700px;
+
+}
+
+
+.counter-number {
+
+    display: block;
+
+    margin-bottom: 40px;
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--color-accent);
+
+}
+
+
+.counter-label {
+
+    font-size: 18px;
+
+    color:
+        var(--color-muted);
+
+}
+
+
+.counter-value {
+
+    font-size:
+        clamp(100px, 20vw, 220px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    margin: 25px 0;
+
+}
+
+
+.counter-unit {
+
+    font-size: 20px;
+
+    color:
+        var(--color-accent);
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+}
+
+
+.counter-text {
+
+    margin-top: 40px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color:
+        var(--color-muted);
+
+}
+
+
+/* ==================================================
+   11. MENSAJE FINAL
+================================================== */
+
+.final-message {
+
+    min-height: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 76px 20px;
+
+    text-align: center;
+
+}
+
+
+.final-content {
+
+    max-width: 650px;
+
+}
+
+
+.final-number {
+
+    display: block;
+
+    margin-bottom: 30px;
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--color-accent);
+
+}
+
+
+.final-content h2 {
+
+    font-size:
+        clamp(45px, 9vw, 80px);
+
+    font-weight: 400;
+
+    margin-bottom: 35px;
+
+}
+
+
+.final-content p {
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    color:
+        var(--color-muted);
+
+}
+
+
+/* ==================================================
+   12. PLAYLIST / SPOTIFY
+================================================== */
+
+.playlist-section {
+
+    min-height: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 76px 20px;
+
+    text-align: center;
+
+}
+
+
+.playlist-content {
+
+    max-width: 650px;
+
+}
+
+
+.playlist-number {
+
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--color-accent);
+
+}
+
+
+.playlist-content h2 {
+
+    font-size:
+        clamp(55px, 10vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+}
+
+
+.playlist-content p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color:
+        var(--color-muted);
+
+    margin-bottom: 45px;
+
+}
+
+
+/* ---------- Botón Spotify ---------- */
+
+.spotify-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 16px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background-color:
+        var(--color-text);
+
+    color:
+        var(--color-white);
+
+    font-family:
+        var(--font-sans);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.spotify-button::before {
+
+    content: "♫";
+
+    font-size: 18px;
+
+}
+
+
+.spotify-button:hover {
+
+    background-color:
+        var(--color-spotify);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(29, 185, 84, 0.20);
+
+}
+
+
+.spotify-button:active {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.spotify-button:focus-visible {
+
+    outline:
+        3px solid
+        var(--color-spotify);
+
+    outline-offset: 4px;
+
+}
+
+/* ==============================
+   FOTO FINAL
+================================= */
+
+.photo-final-section {
+    min-height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 76px 8%;
+}
+
+.photo-final-content {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+}
+
+.photo-final-number {
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.35em;
+
+    color: var(--color-accent);
+}
+
+.photo-final-image {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border: 7px solid rgba(255, 255, 255, 0.82);
+
+    border-radius: 10px;
+
+    box-shadow: 0 24px 60px rgba(50, 35, 30, 0.14);
+}
+
+.photo-final-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    box-shadow: none;
+}
+
+/* ==================================================
+   13. RESPONSIVE
+================================================== */
+
+/* La historia se lee como un recorrido continuo, sin números de etapa. */
+.hero-number,
+.memory-number,
+.gallery-number,
+.counter-number,
+.final-number,
+.photo-final-number,
+.playlist-number {
+
+    display: none;
+
+}
+
+@media (max-width: 600px) {
+
+
+    /* ---------- Recuerdos ---------- */
+
+    .memory {
+
+        min-height: auto;
+
+        padding:
+            36px 20px;
+
+    }
+
+
+    .memory-image {
+
+        margin-bottom:
+            40px;
+
+    }
+
+
+    .memory-image img,
+    .memory-image video {
+
+        height:
+            420px;
+
+    }
+
+
+    .memory p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    /* ---------- Recuerdo lateral ---------- */
+
+    .memory-layout {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            24px;
+
+        text-align:
+            center;
+
+    }
+
+
+    .memory-layout .memory-text {
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .memory-layout .memory-line {
+
+        margin-left:
+            auto;
+
+    }
+
+
+    .memory-layout .memory-image img,
+    .memory-layout .memory-image video {
+
+        height:
+            420px;
+
+    }
+
+
+    /* ---------- Galería ---------- */
+
+    .gallery-section {
+
+        padding:
+            48px 20px;
+
+    }
+
+
+    .counter-section,
+    .final-message,
+    .photo-final-section,
+    .playlist-section {
+
+        min-height: auto;
+
+        padding:
+            48px 20px;
+
+    }
+
+
+    .gallery-intro {
+
+        margin-bottom:
+            40px;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns:
+            1fr;
+
+        grid-template-rows:
+            auto;
+
+        gap:
+            15px;
+
+    }
+
+
+    .gallery-item-small,
+    .gallery-item-large,
+    .gallery-item-wide {
+
+        grid-column:
+            auto;
+
+        grid-row:
+            auto;
+
+        height:
+            350px;
+
+    }
+
+
+    /* ---------- Playlist ---------- */
+
+    .playlist-content p {
+
+        font-size:
+            16px;
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .spotify-button {
+
+        width:
+            100%;
+
+        max-width:
+            280px;
+
+    }
+
+}
+
+.hero::before {
+
+    width:
+        280px;
+
+    height:
+        280px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(65px, 20vw, 100px);
+
+}
+
+/* ==============================
+   LUCES AMBIENTALES
+================================= */
+
+.ambient-lights {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.ambient-lights span {
+    position: absolute;
+    display: block;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(168, 111, 115, 0.20);
+
+    filter: blur(3px);
+
+    opacity: 0;
+
+    animation: ambientFloat linear infinite;
+}
+
+
+/* POSICIONES */
+
+.ambient-lights span:nth-child(1) {
+    left: 12%;
+    top: 80%;
+
+    width: 4px;
+    height: 4px;
+
+    animation-duration: 18s;
+    animation-delay: -4s;
+}
+
+.ambient-lights span:nth-child(2) {
+    left: 28%;
+    top: 65%;
+
+    width: 6px;
+    height: 6px;
+
+    animation-duration: 24s;
+    animation-delay: -12s;
+}
+
+.ambient-lights span:nth-child(3) {
+    left: 48%;
+    top: 90%;
+
+    width: 4px;
+    height: 4px;
+
+    animation-duration: 20s;
+    animation-delay: -8s;
+}
+
+.ambient-lights span:nth-child(4) {
+    left: 67%;
+    top: 70%;
+
+    width: 5px;
+    height: 5px;
+
+    animation-duration: 27s;
+    animation-delay: -15s;
+}
+
+.ambient-lights span:nth-child(5) {
+    left: 82%;
+    top: 85%;
+
+    width: 4px;
+    height: 4px;
+
+    animation-duration: 22s;
+    animation-delay: -6s;
+}
+
+.ambient-lights span:nth-child(6) {
+    left: 92%;
+    top: 55%;
+
+    width: 6px;
+    height: 6px;
+
+    animation-duration: 25s;
+    animation-delay: -18s;
+}
+
+
+/* ANIMACIÓN */
+
+@keyframes ambientFloat {
+
+    0% {
+        transform:
+            translate3d(0, 30px, 0)
+            scale(0.7);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.35;
+    }
+
+    50% {
+        transform:
+            translate3d(35px, -35vh, 0)
+            scale(1);
+    }
+
+    80% {
+        opacity: 0.18;
+    }
+
+    100% {
+        transform:
+            translate3d(-25px, -75vh, 0)
+            scale(0.6);
+
+        opacity: 0;
+    }
+}
+
+
+/* RESPETAR REDUCCIÓN DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ambient-lights span {
+        animation: none;
+        opacity: 0.12;
+    }
+
+}

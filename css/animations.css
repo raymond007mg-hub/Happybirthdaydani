@@ -1,0 +1,257 @@
+/* ==============================
+   ANIMACIONES
+================================= */
+
+
+/* --------------------------------
+   ENTRADA INICIAL
+-------------------------------- */
+
+.hero-content {
+
+    animation:
+        heroAppear 1.2s ease forwards;
+
+}
+
+
+@keyframes heroAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* --------------------------------
+   RECUERDOS
+-------------------------------- */
+
+.memory-image,
+.memory-text {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.memory.show .memory-image {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.memory.show .memory-text {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition-delay:
+        0.15s;
+
+}
+
+
+/* --------------------------------
+   GALERÍA
+-------------------------------- */
+
+.gallery-item {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+.gallery-section.show .gallery-item {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.gallery-section.show
+.gallery-item:nth-child(2) {
+
+    transition-delay:
+        0.15s;
+
+}
+
+
+.gallery-section.show
+.gallery-item:nth-child(3) {
+
+    transition-delay:
+        0.3s;
+
+}
+
+
+/* --------------------------------
+   CONTADOR
+-------------------------------- */
+
+.counter-content {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.counter-section.show
+.counter-content {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* --------------------------------
+   MENSAJE FINAL
+-------------------------------- */
+
+.final-content {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.final-message.show
+.final-content {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* --------------------------------
+   PLAYLIST
+-------------------------------- */
+
+.photo-final-content {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition: opacity 1s ease, transform 1s ease;
+
+}
+
+.photo-final-section.show .photo-final-content {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.playlist-content {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+.playlist-section.show
+.playlist-content {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* --------------------------------
+   REDUCIR MOVIMIENTO
+-------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
